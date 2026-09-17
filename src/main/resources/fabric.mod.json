@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "invsaver",
+  "version": "1.0.0",
+  "name": "Ditto Inventory Saver",
+  "description": "Save your inventory with P and restore it with Z on Minecraft 1.21.11!",
+  "authors": [
+    "AI vs Human Brain Challenge"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.invsaver.InvSaverMod"
+    ],
+    "client": [
+      "net.invsaver.InvSaverClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.21.11",
+    "java": ">=21"
+  }
+}
