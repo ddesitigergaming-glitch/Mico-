@@ -1,0 +1,28 @@
+name: Generate Minecraft Jar Mod
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java Runtime Environment
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Grant Execute Permission for Gradle
+        run: chmod +x ./gradlew
+
+      - name: Build Mod with Gradle Automation
+        run: ./gradlew build
+
+      - name: Upload Finished Jar Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Minecraft-InvSaver-Mod-Jar
+          path: build/libs/*.jar
+          
